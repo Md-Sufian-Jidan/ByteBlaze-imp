@@ -7,7 +7,7 @@ const Blog = () => {
     const { comments_count, title, reading_time_minutes, public_reactions_count, published_at } = blog;
     return (
         <div className="max-w-2xl px-6 py-16 mx-auto space-y-12">
-            <article className="space-y-8 bg-gray-100 text-gray-900 p-7">
+            <article className="space-y-8 bg-gray-100 text-gray-900 p-10">
                 <div className="space-y-6">
                     <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">{title}</h1>
                     <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center text-gray-600">
