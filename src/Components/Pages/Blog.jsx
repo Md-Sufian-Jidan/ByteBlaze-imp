@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { BsBookmarkStarFill } from "react-icons/bs";
+import { saveBlog } from "../../Utils/localStroage";
+
+const handleBookMark =(blog) => {
+    console.log('bookMarked')
+    saveBlog(blog);
+}
 
 const Blog = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -30,6 +37,9 @@ const Blog = () => {
                         </svg>
                         <span>Author</span>
                     </Link>
+                    <div onClick={()=>handleBookMark(blog)} className="bg-primary ml-5 rounded-full p-3 hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-110 overflow-hidden">
+                    <BsBookmarkStarFill size={20} className="text-secondary" />
+                    </div>
                 </div>
             </article>
                 <Outlet />
