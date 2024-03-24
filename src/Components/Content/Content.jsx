@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import placeHolderImage from '/images/404.jpg'
+import Markdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 const Content = () => {
     const blog = useLoaderData();
@@ -15,7 +17,7 @@ const Content = () => {
             </div>
             <div className="p-6 space-y-2">
                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
-                {body_html}
+                <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
             </div>
         </div>
     );
